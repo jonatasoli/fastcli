@@ -1,0 +1,2 @@
+# fastcli
+FastAPI Cli
