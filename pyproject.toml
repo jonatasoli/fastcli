@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "FastCLI"
+name = "fast"
 version = "0.0.1"
 description = "FASTAPI CLI"
 authors = ["Jônatas Luiz de Oliveira <contact@jonatasoliveira.dev>"]
@@ -14,6 +14,9 @@ kamidana = "^0.9.1"
 
 [tool.poetry.dev-dependencies]
 ipdb = "^0.13.9"
+
+[tool.poetry.scripts]
+fast = 'fast.fast:app'
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

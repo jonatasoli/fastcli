@@ -1,22 +1,22 @@
 import typer
+import os
 
-def name(prog_name):
-    typer.echo(f"CLI {prog_name}")
+from pathlib import Path
 
-def create_app():
-    pass
+from fast import actions, __app_name__
 
-def runserver():
-    pass
+app = typer.Typer()
 
-def db_init():
-    pass
 
-def db_makemigrations():
-    pass
+@app.command()
+def name():
+    actions.name(prog_name=__app_name__)
 
-def db_migrate():
-    pass
+@app.command()
+def createapp():
+    typer.echo("create project")
+    os.system("cookiecutter https://github.com/jonatasoli/fastapi-template-cookiecutter")
+    # typer.launch("./fast/create_app.sh")
 
-def app_test():
-    pass
+if __name__ == "__main__":
+    app()
